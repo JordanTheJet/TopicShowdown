@@ -1,0 +1,35 @@
+{
+    "version": 2,
+    "functions": {
+      "api/generate-battle.py": {
+        "memory": 1024,
+        "maxDuration": 10
+      },
+      "api/narrative.py": {
+        "memory": 512,
+        "maxDuration": 5
+      },
+      "api/generate-images.py": {
+        "memory": 1024,
+        "maxDuration": 15
+      }
+    },
+    "routes": [
+      {
+        "src": "/api/generate-battle",
+        "dest": "/api/generate-battle.py"
+      },
+      {
+        "src": "/api/generate-narrative",
+        "dest": "/api/narrative.py"
+      },
+      {
+        "src": "/api/generate-images",
+        "dest": "/api/generate-images.py"
+      }
+    ],
+    "env": {
+      "OPENAI_API_KEY": "@openai-api-key",
+      "XAI_API_KEY": "@xai-api-key"
+    }
+  }
